@@ -1,0 +1,478 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  padding: 10px;
+
+  background-color: #f8f9fa;
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.header-container {
+  max-height: calc(100% - 120px);
+  overflow-y: auto;
+}
+
+.header-container-container {
+  height: 600px;
+  overflow-y: auto;
+}
+
+.header-container-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.header-container-container::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+.header-container-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.header-container-container::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+  border-radius: 5px;
+}
+
+.header-container-container::-webkit-scrollbar-track:hover {
+  background-color: #ccc;
+}
+
+.dashboard {
+  margin-left: 270px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.drop-area-container {
+  margin-top: -18px;
+  margin: auto;
+}
+.compare-button {
+  position: relative;
+  display: inline-block;
+}
+
+.compare-button .compare-button-tip {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.drop-container {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  width: 800px;
+  height: 50px;
+  overflow-x: auto;
+  margin-left: -200px;
+  transition: border 0.3s ease;
+  border-radius: 10px;
+  position: relative;
+}
+
+.drop-container.over {
+  border: 2px solid tomato;
+}
+
+.dropped-header {
+  padding: 8px;
+
+  color: #58aa21;
+  text-align: center;
+  margin-right: 7px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin: 10;
+  padding: 10;
+}
+
+.dropped-headers-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.view-mode-button {
+  margin-left: 100;
+  margin-top: -127px;
+}
+
+.chart-options {
+  margin-top: 10px;
+  margin-left: -200px;
+}
+.filter-popup {
+  width: 300px;
+  height: 190px;
+  text-align: left;
+}
+.filter-buttons {
+  padding: 10;
+  margin-top: 30px;
+  gap: 3;
+}
+
+.chart-select,
+.aggregation-select,
+.go-back-button {
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.chart-container {
+  margin-bottom: 40px;
+}
+
+.data-table-container {
+  margin-top: "100px";
+  overflow: auto;
+  height: 110%;
+  width: 876px;
+  border: 1px solid black;
+  margin-left: -200px;
+  position: fixed;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.fixed-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+}
+
+.table-header {
+  padding: 8px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+.table-body {
+  overflow-y: scroll;
+  max-height: 450px;
+}
+
+.table-cell {
+  border: 1px solid black;
+  text-align: center;
+  width: "160px";
+  height: 20px;
+}
+
+input[type="file"] {
+  outline: none;
+  padding: 4px;
+  margin: -4px;
+  margin-bottom: 20px;
+  box-shadow: #333;
+}
+
+input[type="file"]:focus-within::file-selector-button,
+input[type="file"]:focus::file-selector-button {
+  outline: 2px solid #0964b0;
+  outline-offset: 2px;
+}
+
+input[type="file"]::before {
+  top: 16px;
+}
+
+input[type="file"]::after {
+  top: 14px;
+}
+
+input[type="file"] {
+  position: relative;
+}
+
+input[type="file"]::file-selector-button {
+  width: 136px;
+  color: transparent;
+}
+
+input[type="file"]::before {
+  position: absolute;
+  pointer-events: none;
+
+  left: 40px;
+  color: #0964b0;
+  content: "Upload File";
+}
+
+input[type="file"]::after {
+  position: absolute;
+  pointer-events: none;
+
+  left: 16px;
+  height: 20px;
+  width: 20px;
+  content: "";
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+}
+
+input[type="file"]::file-selector-button {
+  border-radius: 4px;
+  padding: 0 16px;
+  height: 40px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+  margin-right: 16px;
+  transition: background-color 200ms;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: #f3f4f6;
+}
+
+input[type="file"]::file-selector-button:active {
+  background-color: #e5e7eb;
+}
+
+.data-table-container {
+  margin-top: 20px;
+  overflow: auto;
+  max-height: 500px;
+  width: 70%;
+  position: fixed;
+
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.data-table-container table {
+  width: 20%;
+  border-collapse: collapse;
+}
+
+.data-table-container th,
+.data-table-container td {
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.data-table-container thead th {
+  position: sticky;
+  top: 0;
+  background-color: #f0f0f0;
+  z-index: 1;
+}
+
+.data-table-container tbody {
+  overflow-y: scroll;
+  max-height: 450px;
+}
+
+.data-table-container tbody::-webkit-scrollbar {
+  width: 10px;
+}
+
+.data-table-container tbody::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.data-table-container tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.data-table-container tbody tr:hover {
+  background-color: #e0e0e0;
+}
+.sidebar-container.fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #f0f0f0;
+}
+
+.dashboard-container.fixed {
+  position: fixed;
+  top: 0;
+  left: 200px;
+  width: calc(100% - 200px);
+  height: 100vh;
+  overflow-y: auto;
+  background-color: #fff;
+}
+.filter-popup {
+  bottom: 10%;
+  right: 20%;
+}
+.filter-popup {
+  background-color: lightgray;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 50%;
+  height: 65%;
+  position: fixed;
+}
+
+.filter-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-tab {
+  text-transform: none;
+}
+
+.filter-options {
+  margin-bottom: 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: -10px;
+}
+
+.filter-content .MuiTypography-h6 {
+  margin-bottom: 10px;
+}
+
+.filter-content .MuiTextField-root {
+  margin-bottom: 10px;
+}
+
+.filter-content .MuiSlider-root {
+  margin-bottom: 10px;
+}
+
+.filter-content .MuiFormControl-root {
+  margin-bottom: 10px;
+}
+
+.filter-content .MuiButton-root {
+  text-transform: none;
+}
+
+.filter-content .MuiCheckbox-root {
+  padding: 0;
+}
+
+.filter-content .MuiFormControlLabel-root {
+  margin-bottom: 10px;
+}
+.filter-popup2 {
+  bottom: 30%;
+  right: 20%;
+}
+.filter-popup2 {
+  background-color: lightgray;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 30%;
+  height: 40%;
+  position: fixed;
+}
+
+.filter-content2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-tabs2 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-tab2 {
+  text-transform: none;
+}
+
+.filter-options2 {
+  margin-bottom: 20px;
+}
+
+.filter-buttons2 {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.filter-content2 .MuiTypography-h6 {
+  margin-bottom: 10px;
+}
+
+.filter-content2 .MuiTextField-root {
+  margin-bottom: 10px;
+}
+
+.filter-content2 .MuiSlider-root {
+  margin-bottom: 10px;
+}
+
+.filter-content2 .MuiFormControl-root {
+  margin-bottom: 10px;
+}
+
+.filter-content2 .MuiButton-root {
+  text-transform: none;
+}
+
+.filter-content2 .MuiCheckbox-root {
+  padding: 0;
+}
+
+.filter-content2 .MuiFormControlLabel-root {
+  margin-bottom: 10px;
+}
+&:focus {
+  outline: none;
+}
+.filter-buttons4 {
+  margin-top: 125px;
+  margin-left: 430px;
+  position: fixed;
+}
